@@ -99,7 +99,7 @@ We're building a simple command-line tool to manage our list of todos. We're fin
   _ `id` (auto incrementing)
   _ `task`: string
 
-  The documentation for [`dropTable`](http://knexjs.org/#Schema-dropTable) might be helpful.
+  The documentation for [`dropTable`](https://knexjs.org/guide/schema-builder.html#droptable) might be helpful.
   </details>
 
 - [ ] Use `npm run knex migrate:latest` to apply the changes to the database
@@ -122,7 +122,7 @@ We're building a simple command-line tool to manage our list of todos. We're fin
   export async function seed(knex) {
   ```
 
-  The documentation for [`del`](http://knexjs.org/#Builder-del%20/%20delete) and [`insert`](http://knexjs.org/#Builder-insert) might be helpful.
+  The documentation for [`del`](https://knexjs.org/guide/query-builder.html#del-delete) and [`insert`](https://knexjs.org/guide/query-builder.html#insert) might be helpful.
   </details>
 
 - [ ] Run `npm run knex seed:run` to add the new data to the database
