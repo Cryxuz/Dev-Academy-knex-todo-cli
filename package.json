@@ -18,7 +18,9 @@
     "url": "git+https://github.com/dev-academy-challenges/knex-todo-cli.git"
   },
   "eslintConfig": {
-    "extends": ["@devacademy"]
+    "extends": [
+      "@devacademy"
+    ]
   },
   "keywords": [],
   "author": "Dev Academy Aotearoa",
@@ -38,5 +40,9 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
+  },
+  "dependencies": {
+    "knex": "^2.5.1",
+    "sqlite3": "^5.1.6"
   }
 }
