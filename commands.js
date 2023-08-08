@@ -20,7 +20,7 @@ export async function list() {
 
 function printTodos(todos) {
   todos.forEach((todo) => {
-    console.info(`${todo.id}: ${todo.task}`)
+    console.info(`${todo.id}: ${todo.task}; ${todo.completed ? true : false}`)
   })
 }
 
@@ -67,6 +67,33 @@ export async function search(searchTask) {
       return todo.task.includes(searchTask)
     })
     printTodos(filteredTodos)
+  } catch (err) {
+    logError(err)
+  } finally {
+    close()
+  }
+}
+
+export async function changeStatus(id, completed) {
+  try {
+    await updateTodo(id, { completed: completed })
+  } catch (err) {
+    logError(err)
+  } finally {
+    close()
+  }
+}
+
+export async function filterByStatus(status) {
+  try {
+    console.log(status)
+    const todos = await getTodos()
+    const results = todos.filter((todo) => {
+      return status === 'completed'
+        ? todo.completed != false
+        : todo.completed == false
+    })
+    printTodos(results)
   } catch (err) {
     logError(err)
   } finally {

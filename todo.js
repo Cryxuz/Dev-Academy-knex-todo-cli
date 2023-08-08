@@ -21,6 +21,15 @@ switch (cmd) {
   case 'search':
     await commands.search(userInputs[3])
     break
+  case 'changeStatus':
+    await commands.changeStatus(userInputs[3], userInputs[4])
+    break
+  case 'completed':
+    await commands.filterByStatus('completed')
+    break
+  case 'uncomplete':
+    await commands.filterByStatus('uncomplete')
+    break
   default:
     console.log(`I don't understand that command: ${cmd}`)
 }
